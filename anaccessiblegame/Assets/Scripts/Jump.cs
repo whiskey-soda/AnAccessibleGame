@@ -24,7 +24,7 @@ public class Jump : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         // reduce jump height if player stops sprinting and slows down
         if (!movement.isSprinting || Mathf.Abs(movement.xVelocity) < movement.sprint_maxMoveSpeed)

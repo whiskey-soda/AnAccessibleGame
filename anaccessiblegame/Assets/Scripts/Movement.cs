@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
         this.isSprinting = isSprinting;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         float accelMult = 1;
         accelMult = CalculateAccelerationMultiplier();
