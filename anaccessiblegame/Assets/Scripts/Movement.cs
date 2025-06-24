@@ -2,33 +2,31 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Grounded))]
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] float maxMoveSpeed = 5;
     [SerializeField] float acceleration = 5;
     [Space]
-    [SerializeField] float sprint_maxMoveSpeed = 10;
+    public float sprint_maxMoveSpeed = 10;
     [SerializeField] float sprint_acceleration = 10;
     [Space]
     [SerializeField] float deceleration = 5;
     [Tooltip("multiplier applied to acceleration when player is in the air")]
     [SerializeField] float midairAccelMult = .5f;
 
-    float xVelocity = 0;
+    public float xVelocity { get; private set; } = 0;
     int moveDirection = 0;
     float moveInputStrength = 1;
 
-    bool isSprinting = false;
+    public bool isSprinting { get; private set; } = false;
 
     Rigidbody2D rb2d;
-    Grounded groundedScript;
+    [SerializeField] Grounded groundedScript;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        groundedScript = GetComponent<Grounded>();
     }
 
     public void Move(int moveDirection)
