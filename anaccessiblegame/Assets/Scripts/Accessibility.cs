@@ -7,6 +7,7 @@ public class Accessibility : MonoBehaviour
 
     public bool toggleRun = false;
     public bool toggleJump = false;
+    public bool timeStop = false;
 
 
     public UnityEvent toggleRunDisabled;
@@ -41,16 +42,25 @@ public class Accessibility : MonoBehaviour
         gameSpeedPercent -= 10;
     }
 
-    public void ToggleRunToggle()
+    public void SetRunToggle(bool isOn)
     {
-        if (toggleRun) { toggleRun = false; }
-        else { toggleRun = true; }
+        toggleRun = isOn;
     }
 
-    public void ToggleJumpToggle()
+    public void SetJumpToggle(bool isOn)
     {
-        if (toggleJump) { toggleJump = false; }
-        else { toggleJump = true; }
+        toggleJump = isOn;
+    }
+
+    public void SetTimestop(bool isOn)
+    {
+        timeStop = isOn;
+
+        if (timeStop)
+        {
+            SetRunToggle(isOn);
+            SetJumpToggle(isOn);
+        }
     }
 
 }

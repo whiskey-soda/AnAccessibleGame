@@ -42,6 +42,13 @@ public class Movement : MonoBehaviour
     public void Move(int moveDirection)
     {
         this.moveDirection = moveDirection;
+
+        // stop time if movement input is 0, resume if there is any movement input
+        if (accessibility.timeStop)
+        {
+            if (moveDirection == 0) { Time.timeScale = 0; }
+            else { Time.timeScale = accessibility.gameSpeedPercent / 100f; }
+        }
     }
 
     public void Sprint(bool isSprinting)
