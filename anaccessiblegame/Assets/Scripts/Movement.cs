@@ -24,9 +24,19 @@ public class Movement : MonoBehaviour
     Rigidbody2D rb2d;
     [SerializeField] Grounded groundedScript;
 
+    Accessibility accessibility;
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        accessibility = Accessibility.Instance;
+
+        // sprinting stops when toggleRun is turned off
+        accessibility.toggleRunDisabled.AddListener(ResetSprinting);
     }
 
     public void Move(int moveDirection)
@@ -36,7 +46,29 @@ public class Movement : MonoBehaviour
 
     public void Sprint(bool isSprinting)
     {
-        this.isSprinting = isSprinting;
+        // note on detecting if run button is being clicked:
+        // isSprinting is true when button is clicked because the button calls this method with its clicked t/f bool
+
+
+        // if toggleRun is on and run button is being clicked,
+        if (accessibility.toggleRun && isSprinting == true)
+        {
+            // toggle the player's sprinting status
+            if (this.isSprinting) { this.isSprinting = false; }
+            else { this.isSprinting = true; }
+        }
+
+        // if toggleRun is not on, do default behavior
+        // default behavior: sprint on click, stop sprinting on release
+        else if (!accessibility.toggleRun) { this.isSprinting = isSprinting; }
+    }
+
+    /// <summary>
+    /// stops running. used to reset sprinting status when toggleSprint is disabled
+    /// </summary>
+    void ResetSprinting()
+    {
+        isSprinting = false;
     }
 
     private void Update()

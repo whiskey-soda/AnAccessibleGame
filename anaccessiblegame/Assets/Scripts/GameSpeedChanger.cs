@@ -17,14 +17,14 @@ public class GameSpeedChanger : MonoBehaviour
 
     private void Update()
     {
-        gameSpeedDisplay.text = accessibility.GameSpeedPercent.ToString() + "%";
+        gameSpeedDisplay.text = accessibility.gameSpeedPercent.ToString() + "%";
 
         // disable lowering game speed if it is at 10% or lower
-        if (accessibility.GameSpeedPercent <= 10) { lowerSpeedButton.interactable = false; }
+        if (accessibility.gameSpeedPercent <= 10) { lowerSpeedButton.interactable = false; }
         else { lowerSpeedButton.interactable = true; }
 
         // disable raising game speed if it is at 100% or higher
-        if (accessibility.GameSpeedPercent >= 100) { raiseSpeedButton.interactable = false; }
+        if (accessibility.gameSpeedPercent >= 100) { raiseSpeedButton.interactable = false; }
         else { raiseSpeedButton.interactable = true; }
     }
 

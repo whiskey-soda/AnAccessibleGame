@@ -1,8 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Accessibility : MonoBehaviour
 {
-    public int GameSpeedPercent { get; private set; } = 100;
+    public int gameSpeedPercent { get; private set; } = 100;
+
+    public bool toggleRun = false;
+    public bool toggleJump = false;
+
+
+    public UnityEvent toggleRunDisabled;
 
     public static Accessibility Instance;
 
@@ -16,20 +23,33 @@ public class Accessibility : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Time.timeScale = GameSpeedPercent/100;
+        Time.timeScale = gameSpeedPercent/100;
     }
 
     public void RaiseGameSpeed()
     {
-        if (GameSpeedPercent >= 100) { return; }
+        if (gameSpeedPercent >= 100) { return; }
 
-        GameSpeedPercent += 10;
+        gameSpeedPercent += 10;
     }
 
     public void LowerGameSpeed()
     {
-        if (GameSpeedPercent <= 0) { return; }
+        if (gameSpeedPercent <= 0) { return; }
 
-        GameSpeedPercent -= 10;
+        gameSpeedPercent -= 10;
     }
+
+    public void ToggleRunToggle()
+    {
+        if (toggleRun) { toggleRun = false; }
+        else { toggleRun = true; }
+    }
+
+    public void ToggleJumpToggle()
+    {
+        if (toggleJump) { toggleJump = false; }
+        else { toggleJump = true; }
+    }
+
 }

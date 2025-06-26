@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
 
     void Resume()
     {
-        if (Accessibility.Instance != null) { Time.timeScale = (float)Accessibility.Instance.GameSpeedPercent / 100; }
+        if (Accessibility.Instance != null) { Time.timeScale = (float)Accessibility.Instance.gameSpeedPercent / 100; }
         else { Time.timeScale = 1; }
     }
 
