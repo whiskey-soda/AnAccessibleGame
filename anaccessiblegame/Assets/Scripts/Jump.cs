@@ -19,9 +19,16 @@ public class Jump : MonoBehaviour
 
     bool isJumping = false;
 
+    Accessibility accessibility;
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        accessibility = Accessibility.Instance;
     }
 
     private void Update()
@@ -44,7 +51,26 @@ public class Jump : MonoBehaviour
         heightJumped += jumpSpeed * Time.deltaTime;
     }
 
-    public void StartJump()
+    public void DoJump(bool inputPressed)
+    {
+        // toggle jump setting on
+        // jump starts on click, stops on click if player is currently jumping
+        // checks for inputPressed to ensure nothing happens on button release
+        if (accessibility.toggleJump && inputPressed == true)
+        {
+            if (isJumping) { StopJump(); }
+            else { TryStartJump(); }
+        }
+        // default logic
+        // jump on click, stop jumping on release
+        else if (!accessibility.toggleJump)
+        {
+            if (inputPressed) { TryStartJump(); }
+            else { StopJump(); }
+        }
+    }
+
+    private void TryStartJump()
     {
         // start jump if player is on ground
         if (grounded.isGrounded)
@@ -56,7 +82,7 @@ public class Jump : MonoBehaviour
             }
             else
             {
-                 maxJumpHeight = jumpHeight;
+                maxJumpHeight = jumpHeight;
             }
 
             isJumping = true;

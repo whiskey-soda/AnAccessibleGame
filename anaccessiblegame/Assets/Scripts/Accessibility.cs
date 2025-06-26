@@ -10,6 +10,7 @@ public class Accessibility : MonoBehaviour
 
 
     public UnityEvent toggleRunDisabled;
+    public UnityEvent toggleJumpDisabled;
 
     public static Accessibility Instance;
 

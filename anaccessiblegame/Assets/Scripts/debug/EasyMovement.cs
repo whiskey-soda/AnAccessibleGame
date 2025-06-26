@@ -19,7 +19,7 @@ public class EasyMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)) { movement.Sprint(true); }
         if (Input.GetKeyUp(KeyCode.LeftShift)) { movement.Sprint(false); }
 
-        if (Input.GetKeyDown(KeyCode.Space)) { jump.StartJump(); }
-        if (Input.GetKeyUp(KeyCode.Space)) { jump.StopJump(); }
+        if (Input.GetKeyDown(KeyCode.Space)) { jump.DoJump(true); }
+        if (Input.GetKeyUp(KeyCode.Space)) { jump.DoJump(false); }
     }
 }

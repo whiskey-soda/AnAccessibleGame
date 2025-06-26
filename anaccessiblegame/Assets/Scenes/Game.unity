@@ -5190,15 +5190,15 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 493371622}
           m_TargetAssemblyTypeName: Jump, Assembly-CSharp
-          m_MethodName: StartJump
-          m_Mode: 1
+          m_MethodName: DoJump
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 3
     callback:
@@ -5206,8 +5206,8 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 493371622}
           m_TargetAssemblyTypeName: Jump, Assembly-CSharp
-          m_MethodName: StopJump
-          m_Mode: 1
+          m_MethodName: DoJump
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9106,6 +9106,9 @@ MonoBehaviour:
   toggleRun: 0
   toggleJump: 0
   toggleRunDisabled:
+    m_PersistentCalls:
+      m_Calls: []
+  toggleJumpDisabled:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1808636821
