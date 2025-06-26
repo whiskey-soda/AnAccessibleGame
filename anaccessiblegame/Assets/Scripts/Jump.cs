@@ -29,6 +29,7 @@ public class Jump : MonoBehaviour
     private void Start()
     {
         accessibility = Accessibility.Instance;
+        accessibility.toggleJumpDisabled.AddListener(StopJump);
     }
 
     private void Update()
