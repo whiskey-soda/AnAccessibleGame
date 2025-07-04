@@ -1069,6 +1069,18 @@ MonoBehaviour:
             m_StringArgument: DPadUp
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1801867139}
+          m_TargetAssemblyTypeName: OnscreenInput, Assembly-CSharp
+          m_MethodName: Up
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -1710,6 +1722,18 @@ MonoBehaviour:
             m_StringArgument: DPadRight
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1801867139}
+          m_TargetAssemblyTypeName: OnscreenInput, Assembly-CSharp
+          m_MethodName: Right
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -2253,10 +2277,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 296064524}
+    m_SelectOnDown: {fileID: 2127433481}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -2979,10 +3003,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 2134490824}
+    m_SelectOnDown: {fileID: 743499201}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -3024,7 +3048,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 635041452}
         m_TargetAssemblyTypeName: UINavigationHelper, Assembly-CSharp
-        m_MethodName: SelectElement
+        m_MethodName: SelectOnscreenElement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3245,6 +3269,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: DPadLeft
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1801867139}
+          m_TargetAssemblyTypeName: OnscreenInput, Assembly-CSharp
+          m_MethodName: Left
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 3
@@ -5914,6 +5950,18 @@ MonoBehaviour:
             m_StringArgument: JumpPress
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1801867139}
+          m_TargetAssemblyTypeName: OnscreenInput, Assembly-CSharp
+          m_MethodName: Select
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -6040,7 +6088,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1092806167}
         m_TargetAssemblyTypeName: UINavigationHelper, Assembly-CSharp
-        m_MethodName: SelectElement
+        m_MethodName: SelectOnscreenElement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6525,10 +6573,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 2127433481}
+    m_SelectOnDown: {fileID: 1140671452}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -6570,7 +6618,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1145073016}
         m_TargetAssemblyTypeName: UINavigationHelper, Assembly-CSharp
-        m_MethodName: SelectElement
+        m_MethodName: SelectOnscreenElement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8373,10 +8421,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1330832869}
+    m_SelectOnDown: {fileID: 2094723460}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -9537,6 +9585,7 @@ GameObject:
   - component: {fileID: 1801867135}
   - component: {fileID: 1801867137}
   - component: {fileID: 1801867138}
+  - component: {fileID: 1801867139}
   m_Layer: 0
   m_Name: SYSTEM
   m_TagString: Untagged
@@ -9621,6 +9670,19 @@ MonoBehaviour:
   toggleJumpDisabled:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1801867139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801867133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92862303d18b0eb469d30959e0220a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultButton: {fileID: 1463465538}
 --- !u!1 &1808636821
 GameObject:
   m_ObjectHideFlags: 0
@@ -10022,6 +10084,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: DPadDown
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1801867139}
+          m_TargetAssemblyTypeName: OnscreenInput, Assembly-CSharp
+          m_MethodName: Down
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 3
@@ -10619,10 +10693,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1522800656}
+    m_SelectOnDown: {fileID: 1195734731}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -10967,6 +11041,18 @@ MonoBehaviour:
             m_StringArgument: PausePress
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1801867139}
+          m_TargetAssemblyTypeName: OnscreenInput, Assembly-CSharp
+          m_MethodName: ToggleMenu
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -11033,7 +11119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 435651240}
     m_SelectOnDown: {fileID: 1145073013}
@@ -11186,10 +11272,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1463465538}
+    m_SelectOnDown: {fileID: 635041449}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -11231,7 +11317,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2134490827}
         m_TargetAssemblyTypeName: UINavigationHelper, Assembly-CSharp
-        m_MethodName: SelectElement
+        m_MethodName: SelectOnscreenElement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

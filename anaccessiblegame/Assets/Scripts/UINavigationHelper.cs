@@ -16,4 +16,9 @@ public class UINavigationHelper : MonoBehaviour
     {
         eventSystem.SetSelectedGameObject(elementToSelect.gameObject);
     }
+
+    public void SelectOnscreenElement()
+    {
+        OnscreenInput.Instance.SelectButton(elementToSelect);
+    }
 }
