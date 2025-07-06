@@ -6,8 +6,8 @@ public class OnscreenInput : MonoBehaviour
 {
     EventSystem eventSystem;
 
-    [SerializeField] Button defaultButton;
-    Button selectedButton;
+    [SerializeField] Selectable defaultUIElement;
+    Selectable selectedUIElement;
 
     bool menuOpen = false;
 
@@ -32,27 +32,37 @@ public class OnscreenInput : MonoBehaviour
         else // open the menu
         {
             menuOpen = true;
-            SelectButton(defaultButton);
+            SelectElement(defaultUIElement);
         }
     }
 
-    public void SelectButton(Selectable button)
+    public void SelectElement(Selectable element)
     {
         // do nothing if menu is not open or button is invalid
-        if (!menuOpen || button == null) { return; }
+        if (!menuOpen || element == null) { return; }
 
-        eventSystem.SetSelectedGameObject(button.gameObject);
-        selectedButton = button.GetComponent<Button>();
+        eventSystem.SetSelectedGameObject(element.gameObject);
+        selectedUIElement = element;
     }
 
-    public void Up() { SelectButton(selectedButton.navigation.selectOnUp); }
-    public void Down() { SelectButton(selectedButton.navigation.selectOnDown); }
-    public void Left() { SelectButton(selectedButton.navigation.selectOnLeft); }
-    public void Right() { SelectButton(selectedButton.navigation.selectOnRight); }
+    public void Up() { SelectElement(selectedUIElement.navigation.selectOnUp); }
+    public void Down() { SelectElement(selectedUIElement.navigation.selectOnDown); }
+    public void Left() { SelectElement(selectedUIElement.navigation.selectOnLeft); }
+    public void Right() { SelectElement(selectedUIElement.navigation.selectOnRight); }
 
     public void Select()
     {
-        if (menuOpen) { selectedButton.onClick.Invoke(); }
+        if (!menuOpen) { return; }
+
+        if (selectedUIElement is Button) { ((Button)selectedUIElement).onClick.Invoke(); }
+        else if (selectedUIElement is Toggle) 
+        {
+            // flip toggle
+            { ((Toggle)selectedUIElement).isOn = !((Toggle)selectedUIElement).isOn; }
+
+            // activate toggle logic
+            ((Toggle)selectedUIElement).onValueChanged.Invoke(((Toggle)selectedUIElement).isOn); 
+        }
     }
 
     // test

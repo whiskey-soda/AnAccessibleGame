@@ -9,6 +9,8 @@ public class Settings : MonoBehaviour
     [SerializeField] int windowWidth = 800;
     [SerializeField] int windowHeight = 600;
 
+    [Space]
+    [SerializeField] float volumeMax = 100;
 
     public static Settings Instance;
 
@@ -40,15 +42,44 @@ public class Settings : MonoBehaviour
         SaveVolumeValues();
     }
 
+    public void RaiseGameVolBy5() { ChangeGameVolume(CapVolume(gameVolume + 5)); }
+    public void LowerGameVolBy5() { ChangeGameVolume(CapVolume(gameVolume - 5)); }
+
+
     public void ChangeMusicVolume(float newVolume)
     {
         musicVolume = newVolume;
         SaveVolumeValues();
     }
+
+    public void RaiseMusicVolBy5() { ChangeMusicVolume(CapVolume(musicVolume + 5)); }
+    public void LowerMusicVolBy5() { ChangeMusicVolume(CapVolume(musicVolume - 5)); }
+
+
     public void ChangeSFXVolume(float newVolume)
     {
         sfxVolume = newVolume;
         SaveVolumeValues();
+    }
+
+    public void RaiseSFXVolBy5() { ChangeSFXVolume(CapVolume(sfxVolume + 5)); }
+    public void LowerSFXVolBy5() { ChangeSFXVolume(CapVolume(sfxVolume - 5)); }
+
+
+    /// <summary>
+    /// restricts a float to the volume minimums and maximums (0 and 100).
+    /// returns a float that is capped within those values
+    /// </summary>
+    /// <param name="newVolume"></param>
+    /// <returns></returns>
+    float CapVolume(float newVolume)
+    {
+        // below min
+        if (newVolume < 0) { newVolume = 0; }
+        // above max
+        else if (newVolume > volumeMax) { newVolume = volumeMax; }
+
+        return newVolume;
     }
 
     /// <summary>
