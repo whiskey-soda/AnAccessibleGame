@@ -45,10 +45,10 @@ public class OnscreenInput : MonoBehaviour
         selectedUIElement = element;
     }
 
-    public void Up() { SelectElement(selectedUIElement.navigation.selectOnUp); }
-    public void Down() { SelectElement(selectedUIElement.navigation.selectOnDown); }
-    public void Left() { SelectElement(selectedUIElement.navigation.selectOnLeft); }
-    public void Right() { SelectElement(selectedUIElement.navigation.selectOnRight); }
+    public void Up() { if (!menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnUp); }
+    public void Down() { if (!menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnDown); }
+    public void Left() { if (!menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnLeft); }
+    public void Right() { if (!menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnRight); }
 
     public void Select()
     {
@@ -65,10 +65,5 @@ public class OnscreenInput : MonoBehaviour
         }
     }
 
-    // test
-    private void Update()
-    {
-        Debug.Log(eventSystem.currentSelectedGameObject.name);
-    }
 
 }
