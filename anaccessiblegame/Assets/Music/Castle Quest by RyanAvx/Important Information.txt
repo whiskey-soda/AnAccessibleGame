@@ -1,0 +1,75 @@
+-===================================================================-
+Thank you for downloading/purchasing the Breezy's Castle Quest album!#
+-===================================================================-
+
+This is a chiptune asset pack created by me, inspired by the classic
+Castlevania franchise. I used many similar techniques found in the 
+older Castlevania games from the NES and Super Nintendo, but made
+in the Unlimited Chiptune style.
+
+There are tracks for the title, game over and victory, as well as a 
+collection of level tracks. This should cover more or less an entire
+game's soundtrack, but please don't feel limited to just using it
+in a game inspired by Castlevania. The tracks have a high energy feel
+and would be suitable for many fantasy/medieval action style games,
+or even just casual listening, for that nostalgia!
+
+-=================================================================-
+                          Usage Rights
+-=================================================================-
+
+This soundtrack can be used in both commercial and non-commercial 
+projects under these conditions.
+
+1 - Credit is given to me, the author, in a similar size, style
+and duration to that of the game's creator, in either a credits
+screen in game and on the page's about section.
+
+2 - You notify me that you are using it for a project on either
+the album's comment section, twitter DM or itch.io DM. Please
+provide a link to your project.
+
+@ryanandbreezy (twitter)
+
+3 - If requested, please provide a video or gif of the game so
+that I may use it on social media to promote the album.
+
+All rights are reserved by me, and the music on the album may
+not be copied, resold as an OST, uploaded to streaming sites,
+edited or remixed.
+
+-==============================================================-
+                       Looping Instructions
+-==============================================================-
+
+Many of the tracks were designed with looping in mind, though 
+several have 'intros' and 'outros' that you may have to
+exclude when you import the music into your game.
+
+Mondlicht Tanz - Loop starts at 10s in.
+Kittens Vampyrjakt - Loop starts at 7s in.
+Dance of Doom - Loop starts at 5.455s in, ends at 48.96s.
+
+-==============================================================-
+                       Message from me
+-==============================================================-
+
+Thanks again for downloading/purchasing the asset pack! I hope
+you find it useful for your games or projects in some way and
+I'm very much looking forward to seeing what you create!
+
+I'm planning to release a lot more of these asset packs on my
+itch.io page, for various styles and genres of games. Currently
+I have a Mega Man inspired pack up for there too!
+
+Do you have a pack you'd like to see? Please feel free to message
+me!
+
+If you're interested, I'm also available for custom soundtrack
+and commissions. Please message me for more details and the
+prices.
+
+Hope you have a great day, happy game making!
+
+Take it easy breezy!
+RyanAvx
