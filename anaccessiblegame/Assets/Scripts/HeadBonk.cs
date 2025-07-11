@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class Grounded : MonoBehaviour
+public class HeadBonk : MonoBehaviour
 {
-    [SerializeField] public bool isGrounded { get; private set; }
+    public bool headBonking { get; private set; } = false;
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 7)
         {
-            isGrounded = false;
+            headBonking = false;
         }
     }
 
@@ -16,8 +16,7 @@ public class Grounded : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            isGrounded = true;
+            headBonking = true;
         }
     }
-
 }

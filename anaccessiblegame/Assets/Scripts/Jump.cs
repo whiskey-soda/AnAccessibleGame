@@ -7,6 +7,7 @@ public class Jump : MonoBehaviour
 {
     Rigidbody2D rb2d;
     [SerializeField] Grounded grounded;
+    [SerializeField] HeadBonk headCollisionDetector;
     [SerializeField] Movement movement;
 
     [SerializeField] float jumpHeight = 5;
@@ -40,7 +41,7 @@ public class Jump : MonoBehaviour
             maxJumpHeight = jumpHeight;
         }
 
-        if (isJumping && heightJumped < maxJumpHeight)
+        if (isJumping && heightJumped < maxJumpHeight && !headCollisionDetector.headBonking)
         {
             rb2d.linearVelocityY = jumpSpeed;
         }
