@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject accessibilityMenu;
     [SerializeField] GameObject settingsMenu;
 
+    [SerializeField] GameObject screenDim;
+
     void Pause()
     {
         Time.timeScale = 0;
@@ -24,11 +26,17 @@ public class PauseMenu : MonoBehaviour
     {
         Pause();
         ShowMenu(pauseMenu);
+
+        screenDim.SetActive(true);
+
     }
     public void ClosePauseMenu()
     {
         HideAllMenus();
+        screenDim.SetActive(false);
+
         Resume();
+
     }
 
     public void ShowAccessibilitySubmenu()

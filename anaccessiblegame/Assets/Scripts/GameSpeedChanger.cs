@@ -19,6 +19,8 @@ public class GameSpeedChanger : MonoBehaviour
     {
         gameSpeedDisplay.text = accessibility.gameSpeedPercent.ToString() + "%";
 
+        // removed because there is no indication that a ui element is "disabled" or non-interactable
+        /*
         // disable lowering game speed if it is at 10% or lower
         if (accessibility.gameSpeedPercent <= 10) { lowerSpeedButton.interactable = false; }
         else { lowerSpeedButton.interactable = true; }
@@ -26,6 +28,7 @@ public class GameSpeedChanger : MonoBehaviour
         // disable raising game speed if it is at 100% or higher
         if (accessibility.gameSpeedPercent >= 100) { raiseSpeedButton.interactable = false; }
         else { raiseSpeedButton.interactable = true; }
+        */
     }
 
 }
