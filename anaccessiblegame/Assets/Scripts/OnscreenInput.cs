@@ -65,5 +65,13 @@ public class OnscreenInput : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        // if selected element gets unselected (often due to clicking another ui element), reselect it
+        if (menuOpen && selectedUIElement != null && eventSystem.currentSelectedGameObject != selectedUIElement.gameObject)
+        {
+            SelectElement(selectedUIElement);
+        }
+    }
 
 }

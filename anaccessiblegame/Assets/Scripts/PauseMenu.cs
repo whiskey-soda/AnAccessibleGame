@@ -54,4 +54,13 @@ public class PauseMenu : MonoBehaviour
         settingsMenu.SetActive(false);
     }
 
+    public void ToggleMenu()
+    {
+        if (Time.timeScale == 0)
+        {
+            ClosePauseMenu();
+        }
+        else { ShowPauseMenu();}
+    }
+
 }
