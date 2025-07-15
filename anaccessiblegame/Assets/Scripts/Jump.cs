@@ -20,6 +20,9 @@ public class Jump : MonoBehaviour
 
     bool isJumping = false;
 
+    bool canJump = true;
+
+
     Accessibility accessibility;
 
     private void Awake()
@@ -51,10 +54,16 @@ public class Jump : MonoBehaviour
         }
 
         heightJumped += jumpSpeed * Time.deltaTime;
+
+        // stop jump if player jumping is disabled
+        if (isJumping && !canJump) { StopJump(); }
     }
 
     public void DoJump(bool inputPressed)
     {
+        // prevent jumping if jumping is disabled
+        if (!canJump) { return; }
+
         // toggle jump setting on
         // jump starts on click, stops on click if player is currently jumping
         // checks for inputPressed to ensure nothing happens on button release
@@ -95,6 +104,16 @@ public class Jump : MonoBehaviour
     public void StopJump()
     {
         isJumping= false;
+    }
+
+    public void EnableJump()
+    {
+        canJump = true;
+    }
+
+    public void DisableJump()
+    {
+        canJump = false;
     }
 
 }

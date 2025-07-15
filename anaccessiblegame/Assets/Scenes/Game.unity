@@ -3323,6 +3323,7 @@ GameObject:
   - component: {fileID: 493371616}
   - component: {fileID: 493371619}
   - component: {fileID: 493371621}
+  - component: {fileID: 493371626}
   - component: {fileID: 493371617}
   - component: {fileID: 493371622}
   - component: {fileID: 493371623}
@@ -3568,6 +3569,20 @@ MonoBehaviour:
   rb2d: {fileID: 493371619}
   grounded: {fileID: 1388085766}
   animator: {fileID: 493371624}
+--- !u!114 &493371626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493371615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d675068c2a32ea448a300a899b60d841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 493371617}
+  jump: {fileID: 493371622}
 --- !u!1 &499211613
 GameObject:
   m_ObjectHideFlags: 0
@@ -10235,7 +10250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1489454816
 Transform:
   m_ObjectHideFlags: 0

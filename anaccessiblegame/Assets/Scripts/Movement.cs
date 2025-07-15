@@ -24,6 +24,8 @@ public class Movement : MonoBehaviour
     Rigidbody2D rb2d;
     [SerializeField] Grounded groundedScript;
 
+    bool canMove = true;
+
     Accessibility accessibility;
 
     private void Awake()
@@ -124,10 +126,11 @@ public class Movement : MonoBehaviour
             }
         }
 
-        // TODO: set max movement speed and accel based on strength of input
-
         // apply movement value
         rb2d.linearVelocityX = xVelocity;
+
+        // prevent all horizontal movement if movement is disabled
+        if (!canMove) { rb2d.linearVelocityX = 0; }
     }
 
     /// <summary>
@@ -180,4 +183,15 @@ public class Movement : MonoBehaviour
 
         xVelocity = newXVelocity * Mathf.Sign(xVelocity);
     }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+
 }
