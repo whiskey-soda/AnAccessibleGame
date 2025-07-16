@@ -18,7 +18,7 @@ public class Jump : MonoBehaviour
     [Space]
     [SerializeField] float jumpSpeed = 10;
 
-    bool isJumping = false;
+    public bool isJumping { get; private set; } = false;
 
     bool canJump = true;
 

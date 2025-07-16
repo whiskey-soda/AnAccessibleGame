@@ -15,7 +15,9 @@ public class Movement : MonoBehaviour
     [Tooltip("multiplier applied to acceleration when player is in the air")]
     [SerializeField] float midairAccelMult = .5f;
 
+    // direction of actual movement
     public float xVelocity { get; private set; } = 0;
+    // direction of input
     int moveDirection = 0;
     float moveInputStrength = 1;
 

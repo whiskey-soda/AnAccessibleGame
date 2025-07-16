@@ -1,30 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
-[RequireComponent(typeof(RectTransform))]
 public class HVelIndicator : MonoBehaviour
 {
     [SerializeField] Movement movement;
     [Space]
     [SerializeField] Slider slider;
     [SerializeField] float minSliderVal = .142f;
-    [SerializeField] float yDisplacement = -20;
+    [SerializeField] Vector2 displacement;
     [Space]
     [SerializeField] GameObject uiElement;
     [SerializeField] GameObject arrow;
     [SerializeField] GameObject circle;
-    [Space]
-    [SerializeField] Camera cam2D;
 
-    RectTransform rect;
 
     Accessibility accessibility;
 
-    private void Awake()
-    {
-        rect = GetComponent<RectTransform>();
-    }
 
     private void Start()
     {
@@ -65,8 +56,5 @@ public class HVelIndicator : MonoBehaviour
             circle.SetActive(false);
         }
 
-        // indicator sticks to player
-        rect.anchoredPosition = cam2D.WorldToScreenPoint(movement.transform.position);
-        rect.anchoredPosition += new Vector2(0, yDisplacement);
     }
 }
