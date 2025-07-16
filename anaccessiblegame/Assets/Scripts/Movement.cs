@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float maxMoveSpeed = 5;
+    public float maxMoveSpeed = 5;
     [SerializeField] float acceleration = 5;
     [Space]
     public float sprint_maxMoveSpeed = 10;

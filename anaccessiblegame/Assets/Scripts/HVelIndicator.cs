@@ -12,6 +12,10 @@ public class HVelIndicator : MonoBehaviour
     [SerializeField] GameObject uiElement;
     [SerializeField] GameObject arrow;
     [SerializeField] GameObject circle;
+    [Space]
+    [SerializeField] Image arrowLine;
+    [SerializeField] Image arrowHead;
+    [SerializeField] Color sprintingColor;
 
 
     Accessibility accessibility;
@@ -54,6 +58,18 @@ public class HVelIndicator : MonoBehaviour
         {
             arrow.SetActive(true);
             circle.SetActive(false);
+        }
+
+        // slider turns blue when speed is in the sprinting range
+        if (Mathf.Abs(movement.xVelocity) > movement.maxMoveSpeed)
+        {
+            arrowLine.color = sprintingColor;
+            arrowHead.color = sprintingColor;
+        }
+        else
+        {
+            arrowLine.color = Color.white;
+            arrowHead.color = Color.white;
         }
 
     }
