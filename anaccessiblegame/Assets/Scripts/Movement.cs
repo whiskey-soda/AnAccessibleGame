@@ -45,6 +45,9 @@ public class Movement : MonoBehaviour
 
     public void Move(int moveDirection)
     {
+        // stop movement if movement is disabled
+        if (!canMove) { this.moveDirection = 0; return; }
+
         this.moveDirection = moveDirection;
 
         // stop time if movement input is 0, resume if there is any movement input
@@ -57,6 +60,9 @@ public class Movement : MonoBehaviour
 
     public void Sprint(bool isSprinting)
     {
+        // do nothing if movement is disabled
+        if (!canMove) { return; }
+
         // note on detecting if run button is being clicked:
         // isSprinting is true when button is clicked because the button calls this method with its clicked t/f bool
 
@@ -131,8 +137,6 @@ public class Movement : MonoBehaviour
         // apply movement value
         rb2d.linearVelocityX = xVelocity;
 
-        // prevent all horizontal movement if movement is disabled
-        if (!canMove) { rb2d.linearVelocityX = 0; }
     }
 
     /// <summary>
@@ -194,6 +198,10 @@ public class Movement : MonoBehaviour
     public void DisableMovement()
     {
         canMove = false;
+
+        // stop all movement inputs
+        isSprinting = false;
+        moveDirection = 0;
     }
 
 }

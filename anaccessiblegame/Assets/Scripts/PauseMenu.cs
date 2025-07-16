@@ -3,13 +3,17 @@ using System.Collections.Generic;
 
 public class PauseMenu : MonoBehaviour
 {
-    List<GameObject> menuPanels;
-
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject accessibilityMenu;
     [SerializeField] GameObject settingsMenu;
 
     [SerializeField] GameObject screenDim;
+
+    bool menuOpen = false;
+
+    [Space]
+    // prevents bug where in-menu inputs would buffer for when the game unpaused
+    [SerializeField] PlayerControl playerControl;
 
     void Pause()
     {
@@ -18,17 +22,29 @@ public class PauseMenu : MonoBehaviour
 
     void Resume()
     {
-        if (Accessibility.Instance != null) { Time.timeScale = (float)Accessibility.Instance.gameSpeedPercent / 100; }
+        if (Accessibility.Instance != null) 
+        {
+            // only resume time IF timestop is off.
+            // resuming time with timestop on keeps time at full speed until a move input is pressed
+            if (!Accessibility.Instance.timeStop)
+            {
+                Time.timeScale = (float)Accessibility.Instance.gameSpeedPercent / 100;
+            }
+        }
         else { Time.timeScale = 1; }
     }
 
     public void ShowPauseMenu()
     {
+
         Pause();
         ShowMenu(pauseMenu);
 
         screenDim.SetActive(true);
 
+        menuOpen = true;
+
+        playerControl.DisableControl();
     }
     public void ClosePauseMenu()
     {
@@ -37,6 +53,9 @@ public class PauseMenu : MonoBehaviour
 
         Resume();
 
+        menuOpen = false;
+
+        playerControl.EnableControl();
     }
 
     public void ShowAccessibilitySubmenu()
@@ -64,7 +83,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ToggleMenu()
     {
-        if (Time.timeScale == 0)
+        if (menuOpen)
         {
             ClosePauseMenu();
         }

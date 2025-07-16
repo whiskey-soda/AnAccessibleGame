@@ -14265,6 +14265,7 @@ MonoBehaviour:
   accessibilityMenu: {fileID: 829867806}
   settingsMenu: {fileID: 968344959}
   screenDim: {fileID: 2115828153}
+  playerControl: {fileID: 493371626}
 --- !u!114 &1801867138
 MonoBehaviour:
   m_ObjectHideFlags: 0

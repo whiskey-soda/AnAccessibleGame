@@ -37,7 +37,7 @@ public class Accessibility : MonoBehaviour
 
     public void LowerGameSpeed()
     {
-        if (gameSpeedPercent <= 0) { return; }
+        if (gameSpeedPercent <= 10) { return; }
 
         gameSpeedPercent -= 10;
     }
