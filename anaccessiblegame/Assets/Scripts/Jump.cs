@@ -86,8 +86,8 @@ public class Jump : MonoBehaviour
         // start jump if player is on ground
         if (grounded.isGrounded)
         {
-            // set max jump height higher if player is sprinting at max speed
-            if (movement.isSprinting && Mathf.Abs(movement.xVelocity) >= movement.sprint_maxMoveSpeed)
+            // set max jump height higher if player is sprinting at (near) max speed
+            if (movement.isSprinting && Mathf.Abs(movement.xVelocity) >= (movement.sprint_maxMoveSpeed * .9f) )
             {
                 maxJumpHeight = sprintingJumpHeight;
             }
