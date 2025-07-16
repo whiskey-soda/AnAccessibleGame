@@ -44,11 +44,17 @@ public class Accessibility : MonoBehaviour
 
     public void SetRunToggle(bool isOn)
     {
+        // do not turn off if timestop is on
+        if (!isOn && timeStop) { return; }
+
         toggleRun = isOn;
     }
 
     public void SetJumpToggle(bool isOn)
     {
+        // do not turn off if timestop is on
+        if (!isOn && timeStop) { return; }
+
         toggleJump = isOn;
     }
 

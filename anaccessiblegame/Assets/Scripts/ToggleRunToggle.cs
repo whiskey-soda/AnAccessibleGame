@@ -16,10 +16,5 @@ public class ToggleRunToggle : MonoBehaviour
     {
         // if toggle does not match setting, make them match
         if (toggle.isOn != accessibility.toggleRun) { toggle.isOn = accessibility.toggleRun; }
-
-        // cannot change "toggle" type settings while timestop setting is on
-        // timestop automatically activates toggle jump and toggle run
-        if (accessibility.timeStop) { toggle.interactable = false; }
-        else { toggle.interactable = true; }
     }
 }
