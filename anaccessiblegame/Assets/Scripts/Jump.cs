@@ -12,6 +12,7 @@ public class Jump : MonoBehaviour
 
     [SerializeField] float jumpHeight = 5;
     [SerializeField] float sprintingJumpHeight = 6;
+    [SerializeField] float sprintSpeedProportionRequired = .9f;
     float maxJumpHeight = 0;
     float heightJumped = 0;
 
@@ -39,7 +40,7 @@ public class Jump : MonoBehaviour
     private void Update()
     {
         // reduce jump height if player stops sprinting and slows down
-        if (!movement.isSprinting || Mathf.Abs(movement.xVelocity) < movement.sprint_maxMoveSpeed)
+        if (!movement.isSprinting || Mathf.Abs(movement.xVelocity) < (movement.sprint_maxMoveSpeed * sprintSpeedProportionRequired))
         {
             maxJumpHeight = jumpHeight;
         }
@@ -87,7 +88,7 @@ public class Jump : MonoBehaviour
         if (grounded.isGrounded)
         {
             // set max jump height higher if player is sprinting at (near) max speed
-            if (movement.isSprinting && Mathf.Abs(movement.xVelocity) >= (movement.sprint_maxMoveSpeed * .9f) )
+            if (movement.isSprinting && Mathf.Abs(movement.xVelocity) >= (movement.sprint_maxMoveSpeed * sprintSpeedProportionRequired) )
             {
                 maxJumpHeight = sprintingJumpHeight;
             }

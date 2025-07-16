@@ -4130,6 +4130,7 @@ MonoBehaviour:
   movement: {fileID: 493371617}
   jumpHeight: 4.5
   sprintingJumpHeight: 5.5
+  sprintSpeedProportionRequired: 0.9
   jumpSpeed: 12
 --- !u!114 &493371623
 MonoBehaviour:
