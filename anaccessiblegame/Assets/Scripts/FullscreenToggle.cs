@@ -1,14 +1,16 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FullscreenToggle : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI buttonTMP;
+    [SerializeField] Toggle toggle;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Screen.fullScreenMode == FullScreenMode.Windowed) { buttonTMP.text = "windowed"; }
-        else { buttonTMP.text = "fullscreen"; }
+        // if toggle does not match setting, make them match
+        if (toggle.isOn != (Screen.fullScreenMode == FullScreenMode.FullScreenWindow) ) { toggle.isOn = Screen.fullScreenMode == FullScreenMode.FullScreenWindow; ; }
     }
 }

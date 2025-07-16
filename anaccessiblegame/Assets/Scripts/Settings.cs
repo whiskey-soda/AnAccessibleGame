@@ -92,9 +92,9 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
     }
 
-    public void ToggleFullscreen()
+    public void SetFullscreen(bool fullscreen)
     {
-        if (Screen.fullScreenMode == FullScreenMode.Windowed)
+        if (fullscreen)
         {
             Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, false);
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow; 
