@@ -45,8 +45,8 @@ public class Movement : MonoBehaviour
 
     public void Move(int moveDirection)
     {
-        // stop movement if movement is disabled
-        if (!canMove) { this.moveDirection = 0; return; }
+        // do nothing if movement is disabled
+        if (!canMove) { return; }
 
         this.moveDirection = moveDirection;
 

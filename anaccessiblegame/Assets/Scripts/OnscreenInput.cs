@@ -9,7 +9,7 @@ public class OnscreenInput : MonoBehaviour
     [SerializeField] Selectable defaultUIElement;
     Selectable selectedUIElement;
 
-    bool menuOpen = false;
+    [SerializeField] PauseMenu pauseMenu;
 
     public static OnscreenInput Instance;
     private void Awake()
@@ -22,16 +22,12 @@ public class OnscreenInput : MonoBehaviour
     }
 
     /// <summary>
-    /// toggles menu open and closed.
-    /// if menu is opening, selects the default button
+    /// selects the default button in the menu if opening the pause menu is enabled
     /// </summary>
-    public void ToggleMenu()
+    public void SelectDefaultElement()
     {
-        // close the open menu
-        if (menuOpen) { menuOpen = false; }
-        else // open the menu
+        if (pauseMenu.canPause)
         {
-            menuOpen = true;
             SelectElement(defaultUIElement);
         }
     }
@@ -39,20 +35,20 @@ public class OnscreenInput : MonoBehaviour
     public void SelectElement(Selectable element)
     {
         // do nothing if menu is not open or button is invalid
-        if (!menuOpen || element == null) { return; }
+        if (!pauseMenu.menuOpen || element == null) { return; }
 
         eventSystem.SetSelectedGameObject(element.gameObject);
         selectedUIElement = element;
     }
 
-    public void Up() { if (!menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnUp); }
-    public void Down() { if (!menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnDown); }
-    public void Left() { if (!menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnLeft); }
-    public void Right() { if (!menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnRight); }
+    public void Up() { if (!pauseMenu.menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnUp); }
+    public void Down() { if (!pauseMenu.menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnDown); }
+    public void Left() { if (!pauseMenu.menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnLeft); }
+    public void Right() { if (!pauseMenu.menuOpen) { return; } SelectElement(selectedUIElement.navigation.selectOnRight); }
 
     public void Select()
     {
-        if (!menuOpen) { return; }
+        if (!pauseMenu.menuOpen) { return; }
 
         if (selectedUIElement is Button) { ((Button)selectedUIElement).onClick.Invoke(); }
         else if (selectedUIElement is Toggle) 
@@ -68,7 +64,7 @@ public class OnscreenInput : MonoBehaviour
     private void Update()
     {
         // if selected element gets unselected (often due to clicking another ui element), reselect it
-        if (menuOpen && selectedUIElement != null && eventSystem.currentSelectedGameObject != selectedUIElement.gameObject)
+        if (pauseMenu.menuOpen && selectedUIElement != null && eventSystem.currentSelectedGameObject != selectedUIElement.gameObject)
         {
             SelectElement(selectedUIElement);
         }

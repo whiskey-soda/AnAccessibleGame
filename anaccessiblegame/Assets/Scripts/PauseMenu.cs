@@ -9,7 +9,9 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] GameObject screenDim;
 
-    bool menuOpen = false;
+    public bool menuOpen { get; private set; } = false;
+
+    public bool canPause { get; private set; } = true;
 
     [Space]
     // prevents bug where in-menu inputs would buffer for when the game unpaused
@@ -17,6 +19,9 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        // do nothing if pausing is disabled
+        if (!canPause) { return; } 
+
         Time.timeScale = 0;
     }
 
@@ -83,11 +88,18 @@ public class PauseMenu : MonoBehaviour
 
     public void ToggleMenu()
     {
+        // do nothing if pausing is disabled
+        if (!canPause) { return; }
+
         if (menuOpen)
         {
             ClosePauseMenu();
         }
         else { ShowPauseMenu();}
     }
+
+    public void EnablePausing() { canPause = true; }
+
+    public void DisablePausing() { canPause = false; }
 
 }

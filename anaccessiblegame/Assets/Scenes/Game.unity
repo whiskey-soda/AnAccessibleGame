@@ -4210,6 +4210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathHeight: {fileID: 1693957039}
   respawnDelay: 2
+  pauseMenu: {fileID: 1801867137}
 --- !u!1 &499211613
 GameObject:
   m_ObjectHideFlags: 0
@@ -14300,6 +14301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultUIElement: {fileID: 2134490824}
+  pauseMenu: {fileID: 1801867137}
 --- !u!114 &1801867140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18069,7 +18071,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1801867139}
         m_TargetAssemblyTypeName: OnscreenInput, Assembly-CSharp
-        m_MethodName: ToggleMenu
+        m_MethodName: SelectDefaultElement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

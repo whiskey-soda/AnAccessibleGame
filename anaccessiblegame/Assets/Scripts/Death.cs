@@ -8,6 +8,8 @@ public class Death : MonoBehaviour
     [SerializeField] Transform deathHeight;
     [SerializeField] float respawnDelay = 2;
 
+    [SerializeField] PauseMenu pauseMenu;
+
     PlayerControl playerControl;
 
     bool isDead = false;
@@ -28,6 +30,12 @@ public class Death : MonoBehaviour
             if (SpawnController.Instance != null) { Invoke(nameof(Respawn), respawnDelay); }
 
             isDead = true;
+
+            // game should run at full speed if player dies to prevent timing issues
+            Time.timeScale = 1;
+
+            // disable pausing during death
+            pauseMenu.DisablePausing();
         }
     }
 
@@ -35,5 +43,22 @@ public class Death : MonoBehaviour
     {
         if (SpawnController.Instance != null) { SpawnController.Instance.Respawn(); }
         isDead= false;
+
+        // sets game speed to 0 if timestop is on (to prevent letting game run at full speed in timestop)
+        if (Accessibility.Instance != null)
+        {
+            if (Accessibility.Instance.timeStop)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                // game resumes at normal speed if timestop is off
+                Time.timeScale = Accessibility.Instance.gameSpeedPercent / 100;
+            }
+        }
+
+        // re-enable pausing once player has respawned
+        pauseMenu.EnablePausing();
     }
 }
