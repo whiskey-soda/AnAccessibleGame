@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class SpawnController : MonoBehaviour
@@ -6,6 +7,8 @@ public class SpawnController : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] PlayerControl playerControl;
     [SerializeField] Transform initialSpawnTransform;
+    [Space]
+    [SerializeField] CinemachineCamera cinemachineCam;
 
     Vector2 currentSpawn;
 
@@ -33,7 +36,7 @@ public class SpawnController : MonoBehaviour
     /// <param name="spawnPos"></param>
     public void Respawn(Vector2 spawnPos)
     {
-        Debug.Log("respawning...");
+        cinemachineCam.PreviousStateIsValid = false;
         player.transform.position = spawnPos;
         playerControl.EnableControl();
     }
