@@ -8,6 +8,7 @@ public class Settings : MonoBehaviour
 
     [SerializeField] int windowWidth = 800;
     [SerializeField] int windowHeight = 600;
+    public bool isFullscreen { get; private set; }
 
     [Space]
     [SerializeField] float volumeMax = 100;
@@ -31,8 +32,12 @@ public class Settings : MonoBehaviour
             windowWidth = PlayerPrefs.GetInt("WindowWidth");
             windowHeight = PlayerPrefs.GetInt("WindowHeight");
         }
+
         // apply window size if in windowed mode
         if (Screen.fullScreenMode == FullScreenMode.Windowed) { Screen.SetResolution(windowWidth, windowHeight, false); }
+
+        if (Screen.fullScreenMode == FullScreenMode.Windowed) { isFullscreen = false; }
+        else { isFullscreen = true; }
 
     }
 
@@ -100,6 +105,8 @@ public class Settings : MonoBehaviour
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow; 
         }
         else { Screen.SetResolution(windowWidth, windowHeight, false); }
+
+        isFullscreen = fullscreen;
     }
 
     public void LowerWindowSize()
