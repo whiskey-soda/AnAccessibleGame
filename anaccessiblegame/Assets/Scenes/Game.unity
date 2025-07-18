@@ -14579,6 +14579,7 @@ GameObject:
   - component: {fileID: 1801867138}
   - component: {fileID: 1801867139}
   - component: {fileID: 1801867140}
+  - component: {fileID: 1801867141}
   m_Layer: 0
   m_Name: SYSTEM
   m_TagString: Untagged
@@ -14697,6 +14698,19 @@ MonoBehaviour:
   initialSpawnTransform: {fileID: 1970122054}
   playerAnimController: {fileID: 493371625}
   cinemachineCam: {fileID: 377614930}
+--- !u!114 &1801867141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801867133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5518522642a550c48928d09631dea640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 7c612d65fe718044b86322538473f886, type: 2}
 --- !u!1 &1808636821
 GameObject:
   m_ObjectHideFlags: 0
