@@ -40,7 +40,7 @@ Material:
     - _Blur_Offset: 0.0015
     - _Scanline_Count: 500
     - _Scanlines_Speed: -0.002
-    - _Unscaled_Time: 20.016088
+    - _Unscaled_Time: 40.886658
     m_Colors:
     - _Color: {r: 1.3195078, g: 1.3195078, b: 1.3195078, a: 0}
   m_BuildTextureStacks: []
