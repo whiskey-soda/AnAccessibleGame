@@ -14684,6 +14684,7 @@ MonoBehaviour:
   player: {fileID: 493371615}
   playerControl: {fileID: 493371626}
   initialSpawnTransform: {fileID: 1970122054}
+  playerAnimController: {fileID: 493371625}
   cinemachineCam: {fileID: 377614930}
 --- !u!1 &1808636821
 GameObject:

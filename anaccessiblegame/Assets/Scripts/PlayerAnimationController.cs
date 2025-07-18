@@ -28,6 +28,10 @@ public class PlayerAnimationController : MonoBehaviour
         else if (!grounded.isGrounded) { animator.Play("Jump_Static"); }
     }
 
+    /// <summary>
+    /// changes the scale of the players sprite so it faces in the given direction
+    /// </summary>
+    /// <param name="direction"></param>
     public void FaceSprite(int direction)
     {
         if (direction > 0)

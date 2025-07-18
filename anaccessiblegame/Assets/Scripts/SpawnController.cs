@@ -7,6 +7,7 @@ public class SpawnController : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] PlayerControl playerControl;
     [SerializeField] Transform initialSpawnTransform;
+    [SerializeField] PlayerAnimationController playerAnimController;
     [Space]
     [SerializeField] CinemachineCamera cinemachineCam;
 
@@ -47,6 +48,8 @@ public class SpawnController : MonoBehaviour
     public void Respawn()
     {
         Respawn(currentSpawn);
+
+        playerAnimController.FaceSprite(1);
     }
 
     public void Spawn()
