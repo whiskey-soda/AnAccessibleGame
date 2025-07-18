@@ -3972,6 +3972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 493371619}
   grounded: {fileID: 1388085766}
+  movement: {fileID: 493371617}
   animator: {fileID: 493371624}
 --- !u!114 &493371626
 MonoBehaviour:
