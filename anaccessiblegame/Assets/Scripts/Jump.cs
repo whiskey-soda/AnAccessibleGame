@@ -19,6 +19,9 @@ public class Jump : MonoBehaviour
     [Space]
     [SerializeField] float jumpSpeed = 10;
 
+    [Space]
+    [SerializeField] AudioClip jumpSound;
+
     public bool isJumping { get; private set; } = false;
 
     bool canJump = true;
@@ -99,6 +102,10 @@ public class Jump : MonoBehaviour
 
             isJumping = true;
             heightJumped = 0;
+
+
+            // play jump sound
+            if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(jumpSound); }
         }
     }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Settings : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class Settings : MonoBehaviour
     public bool isFullscreen { get; private set; }
 
     [Space]
+    [SerializeField] AudioMixer audioMixer;
     [SerializeField] float volumeMax = 100;
+
+
 
     public static Settings Instance;
 
@@ -26,6 +30,7 @@ public class Settings : MonoBehaviour
         if (PlayerPrefs.HasKey("MusicVolume")) { musicVolume = PlayerPrefs.GetFloat("MusicVolume"); }
         if (PlayerPrefs.HasKey("SFXVolume")) { sfxVolume = PlayerPrefs.GetFloat("SFXVolume"); }
 
+
         // fetch pre-existing window size settings (if they exist)
         if (PlayerPrefs.HasKey("WindowWidth") && PlayerPrefs.HasKey("WindowHeight")) 
         {
@@ -39,6 +44,12 @@ public class Settings : MonoBehaviour
         if (Screen.fullScreenMode == FullScreenMode.Windowed) { isFullscreen = false; }
         else { isFullscreen = true; }
 
+    }
+
+    private void Start()
+    {
+        // apply volume values to the mixer (doesnt work in awake, that's why its in start)
+        UpdateMixerVolumes();
     }
 
     public void ChangeGameVolume(float newVolume)
@@ -95,6 +106,18 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetFloat("GameVolume", gameVolume);
         PlayerPrefs.SetFloat("MusicVolume", musicVolume);
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+
+        UpdateMixerVolumes();
+    }
+
+    /// <summary>
+    /// updates the volumes in the audio mixer to match the values from settings
+    /// </summary>
+    private void UpdateMixerVolumes()
+    {
+        audioMixer.SetFloat("GameVolume", Mathf.Log10(gameVolume/100) * 20);
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume/100) * 20);
+        audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume / 100) * 20);
     }
 
     public void SetFullscreen(bool fullscreen)

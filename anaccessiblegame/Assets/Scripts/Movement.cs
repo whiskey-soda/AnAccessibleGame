@@ -26,6 +26,9 @@ public class Movement : MonoBehaviour
     Rigidbody2D rb2d;
     [SerializeField] Grounded groundedScript;
 
+    [Space]
+    [SerializeField] AudioClip footstep;
+
     bool canMove = true;
 
     Accessibility accessibility;
@@ -185,7 +188,14 @@ public class Movement : MonoBehaviour
     {
         float newXVelocity = Mathf.Abs(xVelocity);
         newXVelocity -= deceleration * Time.deltaTime * accelMult;
-        if (newXVelocity < 0) { newXVelocity = 0; }
+        if (newXVelocity <= 0)
+        {
+            newXVelocity = 0;
+
+            // play footstep sound when player stops moving because they re-enter a standing stance
+            if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(footstep); }
+
+        }
 
         xVelocity = newXVelocity * Mathf.Sign(xVelocity);
     }
@@ -202,6 +212,11 @@ public class Movement : MonoBehaviour
         // stop all movement inputs
         isSprinting = false;
         moveDirection = 0;
+    }
+
+    public void PlayFootstepSound()
+    {
+        if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(footstep); }
     }
 
 }

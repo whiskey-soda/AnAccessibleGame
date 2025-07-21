@@ -14,7 +14,7 @@ public class CRTLightController : MonoBehaviour
     {
         Color lightColor = Color.white;
 
-        if (pauseMenu.menuOpen) { lightColor = pauseColor; }
+        if (pauseMenu.isOpen) { lightColor = pauseColor; }
         else { lightColor = gameplayColor; }
 
 

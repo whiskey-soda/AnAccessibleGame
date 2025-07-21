@@ -9,7 +9,9 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] GameObject screenDim;
 
-    public bool menuOpen { get; private set; } = false;
+    [Space]
+    [SerializeField] AudioClip menuOpen;
+    public bool isOpen { get; private set; } = false;
 
     public bool canPause { get; private set; } = true;
 
@@ -47,9 +49,13 @@ public class PauseMenu : MonoBehaviour
 
         screenDim.SetActive(true);
 
-        menuOpen = true;
+        isOpen = true;
 
         playerControl.DisableControl();
+
+
+        // play menu opening sound
+        if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(menuOpen); }
     }
     public void ClosePauseMenu()
     {
@@ -58,9 +64,12 @@ public class PauseMenu : MonoBehaviour
 
         Resume();
 
-        menuOpen = false;
+        isOpen = false;
 
         playerControl.EnableControl();
+
+        // play menu opening sound
+        if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(menuOpen); }
     }
 
     public void ShowAccessibilitySubmenu()
@@ -91,7 +100,7 @@ public class PauseMenu : MonoBehaviour
         // do nothing if pausing is disabled
         if (!canPause) { return; }
 
-        if (menuOpen)
+        if (isOpen)
         {
             ClosePauseMenu();
         }
