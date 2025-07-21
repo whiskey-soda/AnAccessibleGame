@@ -223,8 +223,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13520558}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.322, z: 1.037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1798,6 +1798,7 @@ MonoBehaviour:
   hover: {fileID: 8300000, guid: 27963f2da18e0e344bc5cf25001c7501, type: 3}
   press: {fileID: 8300000, guid: 50761b32f9467154ead5a796cd1320cf, type: 3}
   release: {fileID: 8300000, guid: 150b4be196703154b9c1617543458427, type: 3}
+  pitchVariance: 0.05
 --- !u!1 &221615765
 GameObject:
   m_ObjectHideFlags: 0
@@ -4054,6 +4055,7 @@ MonoBehaviour:
   midairAccelMult: 0.5
   groundedScript: {fileID: 1388085766}
   footstep: {fileID: 8300000, guid: 05fa039736f21da489eea4418b4508f1, type: 3}
+  pitchVariance: 0.1
 --- !u!50 &493371619
 Rigidbody2D:
   serializedVersion: 5

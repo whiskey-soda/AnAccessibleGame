@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
 
     [Space]
     [SerializeField] AudioClip footstep;
+    [SerializeField] float pitchVariance = .1f;
 
     bool canMove = true;
 
@@ -193,7 +194,7 @@ public class Movement : MonoBehaviour
             newXVelocity = 0;
 
             // play footstep sound when player stops moving because they re-enter a standing stance
-            if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(footstep); }
+            PlayFootstepSound();
 
         }
 
@@ -216,7 +217,7 @@ public class Movement : MonoBehaviour
 
     public void PlayFootstepSound()
     {
-        if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(footstep); }
+        if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(footstep, pitchVariance); }
     }
 
 }
