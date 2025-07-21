@@ -1752,6 +1752,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 211059057}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 211059061}
   m_SourcePrefab: {fileID: 100100000, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
 --- !u!1 &211059056 stripped
 GameObject:
@@ -1780,6 +1783,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &211059061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211059056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37b9e791ed549640866910d7c8ba171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hover: {fileID: 8300000, guid: 27963f2da18e0e344bc5cf25001c7501, type: 3}
+  press: {fileID: 8300000, guid: 50761b32f9467154ead5a796cd1320cf, type: 3}
+  release: {fileID: 8300000, guid: 150b4be196703154b9c1617543458427, type: 3}
 --- !u!1 &221615765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,6 +2223,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayPressSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -2213,6 +2243,34 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
           m_MethodName: Play
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Idle
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayReleaseSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2653,6 +2711,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayPressSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -2679,6 +2749,34 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Idle
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayReleaseSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &330585543
@@ -5051,6 +5149,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayPressSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -5077,6 +5187,34 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Idle
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayReleaseSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &653776784
@@ -9071,6 +9209,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayPressSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -9097,6 +9247,34 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Idle
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayReleaseSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1089310473
@@ -14682,6 +14860,18 @@ MonoBehaviour:
             m_StringArgument: RunPress
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayPressSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -14702,6 +14892,34 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
           m_MethodName: Play
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Idle
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayReleaseSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15362,6 +15580,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayPressSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -15376,6 +15606,34 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Idle
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayReleaseSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &1859648822
@@ -18826,6 +19084,18 @@ MonoBehaviour:
             m_StringArgument: PausePress
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayPressSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
@@ -18834,6 +19104,34 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
           m_MethodName: Play
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Idle
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayReleaseSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 211059061}
+          m_TargetAssemblyTypeName: ControllerSound, Assembly-CSharp
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
