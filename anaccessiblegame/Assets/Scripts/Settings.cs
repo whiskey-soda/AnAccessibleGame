@@ -115,9 +115,19 @@ public class Settings : MonoBehaviour
     /// </summary>
     private void UpdateMixerVolumes()
     {
+        // volume values cant be zero otherwise the calculation returns infinity and it messes up the volume values
+        if (gameVolume == 0) { gameVolume = 0.0001f; }
+        if (musicVolume == 0) { musicVolume = 0.0001f; }
+        if (sfxVolume == 0) { sfxVolume = 0.0001f; }
+
         audioMixer.SetFloat("GameVolume", Mathf.Log10(gameVolume/100) * 20);
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume/100) * 20);
         audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume / 100) * 20);
+
+        // set volume values back to zero (if they were adjusted) for display purposes
+        if (gameVolume == 0.0001f) { gameVolume = 0; }
+        if (musicVolume == 0.0001f) { musicVolume = 0; }
+        if (sfxVolume == 0.0001f) {  sfxVolume = 0; }
     }
 
     public void SetFullscreen(bool fullscreen)
