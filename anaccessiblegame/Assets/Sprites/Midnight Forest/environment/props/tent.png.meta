@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tent_0
+      name: tent
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tent_1
+      name: tent_round_open
       rect:
         serializedVersion: 2
         x: 48
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tent_2
+      name: tent_broken
       rect:
         serializedVersion: 2
         x: 0
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tent_3
+      name: tent_round_closed
       rect:
         serializedVersion: 2
         x: 48
@@ -198,10 +198,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tent_0: -1159266173
-      tent_1: -1959367077
-      tent_2: 206049276
-      tent_3: -785262405
+      tent: -1159266173
+      tent_broken: 206049276
+      tent_round_closed: -785262405
+      tent_round_open: -1959367077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

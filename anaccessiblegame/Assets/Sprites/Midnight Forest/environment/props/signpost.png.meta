@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: signpost_0
+      name: sign_short_box
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_1
+      name: sign_tall_box_arrow
       rect:
         serializedVersion: 2
         x: 16
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_2
+      name: sign_tall_arrow_box_arrow
       rect:
         serializedVersion: 2
         x: 32
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_3
+      name: sign_tall_box_arrow_arrow
       rect:
         serializedVersion: 2
         x: 48
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_4
+      name: sign_short_arrow_right
       rect:
         serializedVersion: 2
         x: 0
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_8
+      name: sign_modular_box
       rect:
         serializedVersion: 2
         x: 64
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_9
+      name: sign_small_arrow_left
       rect:
         serializedVersion: 2
         x: 0
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_10
+      name: sign_small_broken_box
       rect:
         serializedVersion: 2
         x: 0
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_12
+      name: sign_tall_broken_arrow_box_arrow
       rect:
         serializedVersion: 2
         x: 32
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_14
+      name: sign_small_broken_arrow_fallen
       rect:
         serializedVersion: 2
         x: 0
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_15
+      name: sign_tall_broken_box_arrow
       rect:
         serializedVersion: 2
         x: 16
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_17
+      name: sign_tall_broken_box_arrow_arrow
       rect:
         serializedVersion: 2
         x: 48
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_18
+      name: sign_modular_broken_box
       rect:
         serializedVersion: 2
         x: 64
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_19
+      name: sign_small_broken_arrow_left
       rect:
         serializedVersion: 2
         x: 0
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_20
+      name: sign_small_moss_box
       rect:
         serializedVersion: 2
         x: 0
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_22
+      name: sign_tall_moss_arrow_box_arrow
       rect:
         serializedVersion: 2
         x: 32
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_23
+      name: sign_tall_moss_box_arrow_arrow
       rect:
         serializedVersion: 2
         x: 48
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_25
+      name: sign_small_moss_arrow_fallen
       rect:
         serializedVersion: 2
         x: 0
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_26
+      name: sign_tall_moss_box_arrow
       rect:
         serializedVersion: 2
         x: 16
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_29
+      name: sign_modular_moss_box
       rect:
         serializedVersion: 2
         x: 64
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: signpost_30
+      name: sign_small_moss_arrow_left
       rect:
         serializedVersion: 2
         x: 0
@@ -572,37 +572,37 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      signpost_0: -1513644339
-      signpost_1: -1845550296
-      signpost_10: -49309217
+      sign_modular_box: 1175084226
+      sign_modular_broken_box: 1525404356
+      sign_modular_moss_box: 374784700
+      sign_short_arrow_right: 963125523
+      sign_short_box: -1513644339
+      sign_small_arrow_left: 1631356304
+      sign_small_broken_arrow_fallen: 864894146
+      sign_small_broken_arrow_left: -848614929
+      sign_small_broken_box: -49309217
+      sign_small_moss_arrow_fallen: 1985396167
+      sign_small_moss_arrow_left: -728567915
+      sign_small_moss_box: 793828735
+      sign_tall_arrow_box_arrow: -619397656
+      sign_tall_box_arrow: -1845550296
+      sign_tall_box_arrow_arrow: 873220651
+      sign_tall_broken_arrow_box_arrow: 1009632035
+      sign_tall_broken_box_arrow: -1918166167
+      sign_tall_broken_box_arrow_arrow: 1100550028
+      sign_tall_moss_arrow_box_arrow: 1257579992
+      sign_tall_moss_box_arrow: -1433832529
+      sign_tall_moss_box_arrow_arrow: -2057566657
       signpost_11: -889488332
-      signpost_12: 1009632035
       signpost_13: 1562079031
-      signpost_14: 864894146
-      signpost_15: -1918166167
       signpost_16: 1978576594
-      signpost_17: 1100550028
-      signpost_18: 1525404356
-      signpost_19: -848614929
-      signpost_2: -619397656
-      signpost_20: 793828735
       signpost_21: 1602984745
-      signpost_22: 1257579992
-      signpost_23: -2057566657
       signpost_24: 1949285743
-      signpost_25: 1985396167
-      signpost_26: -1433832529
       signpost_27: -1569337936
       signpost_28: 1950580894
-      signpost_29: 374784700
-      signpost_3: 873220651
-      signpost_30: -728567915
-      signpost_4: 963125523
       signpost_5: 968224630
       signpost_6: 1536441559
       signpost_7: -1325230073
-      signpost_8: 1175084226
-      signpost_9: 1631356304
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

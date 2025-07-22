@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: trees_0
+      name: tree_round_top
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_1
+      name: tree_sharp_top
       rect:
         serializedVersion: 2
         x: 16
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_2
+      name: tree_fluffy_top
       rect:
         serializedVersion: 2
         x: 32
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_3
+      name: tree_branches_1_top
       rect:
         serializedVersion: 2
         x: 48
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_4
+      name: tree_branches_2_top
       rect:
         serializedVersion: 2
         x: 64
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_5
+      name: tree_branches_3_top
       rect:
         serializedVersion: 2
         x: 80
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_6
+      name: tree_branches_4_top
       rect:
         serializedVersion: 2
         x: 96
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_7
+      name: tree_branches_5_top
       rect:
         serializedVersion: 2
         x: 112
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_8
+      name: tree_branches_6_top
       rect:
         serializedVersion: 2
         x: 128
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_9
+      name: tree_round_leaves
       rect:
         serializedVersion: 2
         x: 0
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_10
+      name: tree_sharp_leaves
       rect:
         serializedVersion: 2
         x: 16
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_11
+      name: tree_fluffy_leaves
       rect:
         serializedVersion: 2
         x: 32
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_12
+      name: tree_round_middle_high
       rect:
         serializedVersion: 2
         x: 48
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_13
+      name: tree_round_middle_low
       rect:
         serializedVersion: 2
         x: 64
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_14
+      name: tree_sharp_middle_high
       rect:
         serializedVersion: 2
         x: 80
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_15
+      name: tree_sharp_middle_low
       rect:
         serializedVersion: 2
         x: 96
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_16
+      name: tree_fluffy_middle_high
       rect:
         serializedVersion: 2
         x: 112
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_17
+      name: tree_fluffy_middle_low
       rect:
         serializedVersion: 2
         x: 128
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_18
+      name: tree_round_bottom_high
       rect:
         serializedVersion: 2
         x: 0
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_19
+      name: tree_sharp_bottom_high
       rect:
         serializedVersion: 2
         x: 16
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_20
+      name: tree_fluffy_bottom_high
       rect:
         serializedVersion: 2
         x: 32
@@ -559,7 +559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_21
+      name: tree_branches_1_trunk
       rect:
         serializedVersion: 2
         x: 48
@@ -581,7 +581,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_22
+      name: tree_branches_2_trunk
       rect:
         serializedVersion: 2
         x: 64
@@ -603,7 +603,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_23
+      name: tree_branches_3_trunk
       rect:
         serializedVersion: 2
         x: 80
@@ -625,7 +625,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_24
+      name: tree_branches_4_trunk
       rect:
         serializedVersion: 2
         x: 96
@@ -647,7 +647,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_25
+      name: tree_branches_5_trunk
       rect:
         serializedVersion: 2
         x: 112
@@ -669,7 +669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_26
+      name: tree_branches_6_trunk
       rect:
         serializedVersion: 2
         x: 128
@@ -691,7 +691,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_27
+      name: tree_round_bottom_low
       rect:
         serializedVersion: 2
         x: 0
@@ -713,7 +713,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_28
+      name: tree_sharp_bottom_low
       rect:
         serializedVersion: 2
         x: 16
@@ -735,7 +735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_29
+      name: tree_fluffy_bottom_low
       rect:
         serializedVersion: 2
         x: 32
@@ -757,7 +757,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_30
+      name: tree_branches_1_bottom
       rect:
         serializedVersion: 2
         x: 48
@@ -779,7 +779,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_31
+      name: tree_branches_2_bottom
       rect:
         serializedVersion: 2
         x: 64
@@ -801,7 +801,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_32
+      name: tree_branches_3_bottom
       rect:
         serializedVersion: 2
         x: 80
@@ -823,7 +823,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_33
+      name: tree_branches_4_bottom
       rect:
         serializedVersion: 2
         x: 96
@@ -845,7 +845,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_34
+      name: tree_branches_5_bottom
       rect:
         serializedVersion: 2
         x: 112
@@ -867,7 +867,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_35
+      name: tree_branches_6_bottom
       rect:
         serializedVersion: 2
         x: 128
@@ -902,42 +902,42 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      trees_0: 1900807315
-      trees_1: -1216132205
-      trees_10: -2070758020
-      trees_11: 1684179888
-      trees_12: -564815951
-      trees_13: 485884467
-      trees_14: -592570669
-      trees_15: 682777442
-      trees_16: 15904839
-      trees_17: 1198193347
-      trees_18: 1989286798
-      trees_19: -1373793991
-      trees_2: -289741514
-      trees_20: 1121861460
-      trees_21: -1981231350
-      trees_22: -967881455
-      trees_23: 2055088597
-      trees_24: 1891500171
-      trees_25: -1775529987
-      trees_26: 1095150794
-      trees_27: -1945763178
-      trees_28: 132438694
-      trees_29: 975493920
-      trees_3: -1559120006
-      trees_30: 492344778
-      trees_31: 632293663
-      trees_32: -177478177
-      trees_33: 880541369
-      trees_34: 1433943096
-      trees_35: 1773726375
-      trees_4: -1567669150
-      trees_5: -874521660
-      trees_6: 111262452
-      trees_7: -300891177
-      trees_8: 1631732872
-      trees_9: 1990685965
+      tree_branches_1_bottom: 492344778
+      tree_branches_1_top: -1559120006
+      tree_branches_1_trunk: -1981231350
+      tree_branches_2_bottom: 632293663
+      tree_branches_2_top: -1567669150
+      tree_branches_2_trunk: -967881455
+      tree_branches_3_bottom: -177478177
+      tree_branches_3_top: -874521660
+      tree_branches_3_trunk: 2055088597
+      tree_branches_4_bottom: 880541369
+      tree_branches_4_top: 111262452
+      tree_branches_4_trunk: 1891500171
+      tree_branches_5_bottom: 1433943096
+      tree_branches_5_top: -300891177
+      tree_branches_5_trunk: -1775529987
+      tree_branches_6_bottom: 1773726375
+      tree_branches_6_top: 1631732872
+      tree_branches_6_trunk: 1095150794
+      tree_fluffy_bottom_high: 1121861460
+      tree_fluffy_bottom_low: 975493920
+      tree_fluffy_leaves: 1684179888
+      tree_fluffy_middle_high: 15904839
+      tree_fluffy_middle_low: 1198193347
+      tree_fluffy_top: -289741514
+      tree_round_bottom_high: 1989286798
+      tree_round_bottom_low: -1945763178
+      tree_round_leaves: 1990685965
+      tree_round_middle_high: -564815951
+      tree_round_middle_low: 485884467
+      tree_round_top: 1900807315
+      tree_sharp_bottom_high: -1373793991
+      tree_sharp_bottom_low: 132438694
+      tree_sharp_leaves: -2070758020
+      tree_sharp_middle_high: -592570669
+      tree_sharp_middle_low: 682777442
+      tree_sharp_top: -1216132205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
