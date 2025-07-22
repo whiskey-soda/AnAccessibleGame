@@ -10,8 +10,8 @@ public class Jump : MonoBehaviour
     [SerializeField] HeadBonk headCollisionDetector;
     [SerializeField] Movement movement;
 
-    [SerializeField] float jumpHeight = 5;
-    [SerializeField] float sprintingJumpHeight = 6;
+    [SerializeField] float jumpHeight = 4;
+    [SerializeField] float sprintingJumpHeight = 5.5f;
     [SerializeField] float sprintSpeedProportionRequired = .9f;
     float maxJumpHeight = 0;
     float heightJumped = 0;
