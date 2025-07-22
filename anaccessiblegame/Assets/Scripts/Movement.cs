@@ -220,4 +220,9 @@ public class Movement : MonoBehaviour
         if (SoundController.Instance != null) { SoundController.Instance.PlaySoundEffect(footstep, pitchVariance); }
     }
 
+    public void StopXVelocity()
+    {
+        xVelocity = 0;
+    }
+
 }
