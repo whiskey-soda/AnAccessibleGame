@@ -94,6 +94,9 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        // dont process movement logic if game is paused
+        if (Time.timeScale == 0) { return; }
+
         float accelMult = 1;
         accelMult = CalculateAccelerationMultiplier();
 
