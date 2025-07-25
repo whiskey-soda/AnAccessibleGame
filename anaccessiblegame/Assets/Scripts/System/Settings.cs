@@ -13,7 +13,7 @@ public class Settings : MonoBehaviour
 
     [Space]
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] float volumeMax = 100;
+    [SerializeField] public float volumeMax = 100;
 
 
 
