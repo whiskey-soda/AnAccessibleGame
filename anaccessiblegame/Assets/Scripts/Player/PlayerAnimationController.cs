@@ -6,6 +6,7 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] Grounded grounded;
     [SerializeField] Movement movement;
     [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     private void Update()
     {
@@ -34,11 +35,15 @@ public class PlayerAnimationController : MonoBehaviour
     /// <param name="direction"></param>
     public void FaceSprite(int direction)
     {
+        // do nothing if sprite renderer is null
+        if (spriteRenderer == null) { return; }
+
         if (direction > 0)
         {
-            transform.localScale = new Vector2(1, transform.localScale.y);
+            // sprite faces right by default
+            spriteRenderer.flipX = false;
         }
-        else if (direction < 0) { transform.localScale = new Vector2(-1, transform.localScale.y); }
+        else if (direction < 0) { spriteRenderer.flipX = true; }
     }
 
 }

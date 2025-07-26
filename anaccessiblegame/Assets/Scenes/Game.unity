@@ -6445,6 +6445,7 @@ MonoBehaviour:
   grounded: {fileID: 1388085766}
   movement: {fileID: 493371617}
   animator: {fileID: 493371624}
+  spriteRenderer: {fileID: 493371616}
 --- !u!114 &493371626
 MonoBehaviour:
   m_ObjectHideFlags: 0
