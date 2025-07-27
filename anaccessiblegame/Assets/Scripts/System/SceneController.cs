@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] float gameStartDelay = .8f;
+    [SerializeField] float returnToMenuDelay = .4f;
     [Space]
     [SerializeField] Animator camAnimator;
     [SerializeField] Image tvStatic;
@@ -15,7 +16,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] PlayerControl playerControl;
     [SerializeField] SpawnController spawnController;
     [SerializeField] SoundController soundController;
-    [SerializeField] Animator controllerAnimator;
+    [SerializeField] Animator controllerPosAnimator;
 
     public static SceneController Instance;
 
@@ -32,6 +33,20 @@ public class SceneController : MonoBehaviour
         Invoke(nameof(StartGame), gameStartDelay + panToGameplay.length); // start game after pan is done + a delay
     }
 
+    public void GoToMainMenu()
+    {
+        soundController.StopAllSounds(); // prevents game from finishing a sound effect while static starts
+        SetTvStatic(true);
+        camAnimator.Play("PanToMenu");
+
+        pauseMenu.ClosePauseMenu();
+        pauseMenu.DisablePausing();
+        playerControl.DisableControl();
+        soundController.SetSoundEffectsEnabled(false);
+        soundController.SetMusicEnabled(false);
+        controllerPosAnimator.Play("ControllerSlideOut");
+    }
+
     void StartGame()
     {
         InitializePlatformer();
@@ -46,7 +61,7 @@ public class SceneController : MonoBehaviour
         spawnController.Spawn();
         soundController.SetSoundEffectsEnabled(true);
         soundController.SetMusicEnabled(true);
-        controllerAnimator.Play("ControllerSlideIn");
+        controllerPosAnimator.Play("ControllerSlideIn");
     }
 
     void SetTvStatic(bool isOn)
@@ -60,6 +75,9 @@ public class SceneController : MonoBehaviour
 
         // set audiosource
         tvStaticAudioSource.mute = !isOn;
+        if (isOn) { tvStaticAudioSource.Play(); }
     }
+
+    
 
 }

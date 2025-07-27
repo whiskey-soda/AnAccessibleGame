@@ -3015,7 +3015,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1718275515}
     m_Modifications:
     - target: {fileID: -8945753148780390605, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3051,7 +3051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05
+      value: 0.050000004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3059,11 +3059,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.134
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3071,7 +3071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_LocalRotation.y
@@ -3099,7 +3099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bd0acb7dfd7599c4481bc054dd17297a, type: 3}
       propertyPath: m_Name
-      value: Controller
+      value: ControllerMesh
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9996,10 +9996,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 330585549}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
+      - m_Target: {fileID: 1801867135}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: GoToMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15689,7 +15689,7 @@ GameObject:
   - component: {fileID: 1103882848}
   - component: {fileID: 1103882847}
   m_Layer: 5
-  m_Name: ScreenSpaceCanvas
+  m_Name: ControllerCursorCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25019,6 +25019,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715262206}
   m_CullTransparentMesh: 1
+--- !u!1 &1718275513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1718275515}
+  - component: {fileID: 1718275514}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1718275514
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718275513}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84f898ce72ce9a143956f4cf521318ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1718275515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718275513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0.33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 211059064}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1723291728
 GameObject:
   m_ObjectHideFlags: 0
@@ -26603,6 +26658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStartDelay: 0.8
+  returnToMenuDelay: 0.4
   camAnimator: {fileID: 330585549}
   tvStatic: {fileID: 906437626}
   tvStaticAudioSource: {fileID: 1646082487}
@@ -26611,7 +26667,7 @@ MonoBehaviour:
   playerControl: {fileID: 493371626}
   spawnController: {fileID: 1801867140}
   soundController: {fileID: 1509779033}
-  controllerAnimator: {fileID: 211059057}
+  controllerPosAnimator: {fileID: 1718275514}
 --- !u!114 &1801867136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42156,6 +42212,6 @@ SceneRoots:
   - {fileID: 1035842528}
   - {fileID: 619774137}
   - {fileID: 1801867134}
-  - {fileID: 211059055}
+  - {fileID: 1718275515}
   - {fileID: 780129}
   - {fileID: 54644073}

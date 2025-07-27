@@ -58,4 +58,12 @@ public class SoundController : MonoBehaviour
         if (enable) { musicAudioSource.Play(); }
     }
 
+    public void StopAllSounds()
+    {
+        foreach (AudioSource audioSource in FindObjectsByType<AudioSource>(FindObjectsSortMode.None))
+        {
+            audioSource.Stop();
+        }
+    }
+
 }
