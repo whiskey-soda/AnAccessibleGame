@@ -26658,7 +26658,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStartDelay: 0.8
-  returnToMenuDelay: 0.4
   camAnimator: {fileID: 330585549}
   tvStatic: {fileID: 906437626}
   tvStaticAudioSource: {fileID: 1646082487}
@@ -26788,6 +26787,7 @@ MonoBehaviour:
   - {fileID: 837051425}
   - {fileID: 204883585}
   - {fileID: 54644075}
+  tvStatic: {fileID: 906437626}
 --- !u!1 &1808636821
 GameObject:
   m_ObjectHideFlags: 0

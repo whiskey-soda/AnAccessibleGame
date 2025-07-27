@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] float gameStartDelay = .8f;
-    [SerializeField] float returnToMenuDelay = .4f;
     [Space]
     [SerializeField] Animator camAnimator;
     [SerializeField] Image tvStatic;
