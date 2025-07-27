@@ -6,6 +6,9 @@ public class SoundController : MonoBehaviour
     public static SoundController Instance;
 
     [SerializeField] AudioSource sfxAudioSourcePrefab;
+    [SerializeField] AudioSource musicAudioSource;
+
+    public bool soundEffectsEnabled { get; private set; } = false;
 
     private void Awake()
     {
@@ -16,6 +19,9 @@ public class SoundController : MonoBehaviour
 
     public void PlaySoundEffect(AudioClip audioClip)
     {
+        // do nothing if sound effects are disabled
+        if (!soundEffectsEnabled) { return; }
+
         AudioSource audioSource = Instantiate(this.sfxAudioSourcePrefab, transform);
 
         audioSource.clip = audioClip;
@@ -26,6 +32,9 @@ public class SoundController : MonoBehaviour
 
     public void PlaySoundEffect(AudioClip audioClip,float pitchVariance)
     {
+        // do nothing if sound effects are disabled
+        if (!soundEffectsEnabled) { return; }
+
         AudioSource audioSource = Instantiate(this.sfxAudioSourcePrefab, transform);
 
         // randomize pitch before playing
@@ -35,6 +44,18 @@ public class SoundController : MonoBehaviour
         audioSource.Play();
 
         Destroy(audioSource.gameObject, audioSource.clip.length);
+    }
+
+    public void SetSoundEffectsEnabled(bool enable)
+    {
+        soundEffectsEnabled = enable;
+    }
+
+    public void SetMusicEnabled(bool enable)
+    {
+        musicAudioSource.mute = !enable;
+
+        if (enable) { musicAudioSource.Play(); }
     }
 
 }
