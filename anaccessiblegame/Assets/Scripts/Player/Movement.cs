@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
 
     Accessibility accessibility;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
@@ -53,13 +53,31 @@ public class Movement : MonoBehaviour
         if (!canMove) { return; }
 
         // stop time if movement input is 0, resume if there is any movement input
-        if (accessibility.timeStop)
+        if (accessibility != null)
         {
-            if (moveDirection == 0) { Time.timeScale = 0; }
-            else { Time.timeScale = accessibility.gameSpeedPercent / 100f; }
+            if (accessibility.timeStop)
+            {
+                if (moveDirection == 0) { Time.timeScale = 0; }
+                else { Time.timeScale = accessibility.gameSpeedPercent / 100f; }
+            }
         }
 
         this.moveDirection = moveDirection;
+        moveInputStrength = Mathf.Abs(moveDirection);
+    }
+
+    /// <summary>
+    /// allows for movement even while playercontrols are disabled. ignores timestop
+    /// </summary>
+    /// <param name="moveDirection"></param>
+    /// <param name="ignoreControlStatus"></param>
+    public void Move(float moveDirection, bool ignoreControlStatus)
+    {
+        // do nothing if bool is false
+        if (!ignoreControlStatus) { return; }
+
+        this.moveDirection = (int)Mathf.Sign(moveDirection);
+        moveInputStrength = Mathf.Abs(moveDirection);
     }
 
     public void Sprint(bool isSprinting)
@@ -92,7 +110,7 @@ public class Movement : MonoBehaviour
         isSprinting = false;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         // dont process movement logic if game is paused
         if (Time.timeScale == 0) { return; }

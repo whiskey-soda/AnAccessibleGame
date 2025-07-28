@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
-    [SerializeField] float gameStartDelay = .8f;
+    [SerializeField] float gameStartDelay = .7f;
     [Space]
     [SerializeField] Animator camAnimator;
     [SerializeField] Image tvStatic;
@@ -16,6 +16,9 @@ public class SceneController : MonoBehaviour
     [SerializeField] SpawnController spawnController;
     [SerializeField] SoundController soundController;
     [SerializeField] Animator controllerPosAnimator;
+    Accessibility accessibility;
+    [SerializeField] Transform endingCutsceneParent;
+    [SerializeField] GameObject endingCutscenePrefab;
 
     public static SceneController Instance;
 
@@ -24,6 +27,11 @@ public class SceneController : MonoBehaviour
         // singleton code
         if (Instance == null) { Instance = this; }
         else if (Instance != this) { Destroy(this); }
+    }
+
+    private void Start()
+    {
+        accessibility = Accessibility.Instance;
     }
 
     public void TransitionToGameplay()
@@ -44,13 +52,15 @@ public class SceneController : MonoBehaviour
         soundController.SetSoundEffectsEnabled(false);
         soundController.SetMusicEnabled(false);
         controllerPosAnimator.Play("ControllerSlideOut");
+
     }
 
     void StartGame()
     {
         InitializePlatformer();
 
-        SetTvStatic(false);
+        // slight delay to prevent the player seeing any loading setup
+        Invoke(nameof(ShowGame), .1f);
     }
 
     void InitializePlatformer()
@@ -60,7 +70,20 @@ public class SceneController : MonoBehaviour
         spawnController.Spawn();
         soundController.SetSoundEffectsEnabled(true);
         soundController.SetMusicEnabled(true);
-        controllerPosAnimator.Play("ControllerSlideIn");
+
+        // disable all accessibility options on startup
+        if (accessibility != null)
+        {
+            accessibility.SetTimestop(false);
+            accessibility.SetJumpToggle(false);
+            accessibility.SetRunToggle(false);
+        }
+
+        // create an ending cutscene if none exists
+        if (FindAnyObjectByType<Ending>() == null)
+        {
+            Instantiate(endingCutscenePrefab, endingCutsceneParent);
+        }
     }
 
     void SetTvStatic(bool isOn)
@@ -77,6 +100,10 @@ public class SceneController : MonoBehaviour
         if (isOn) { tvStaticAudioSource.Play(); }
     }
 
-    
+    void ShowGame()
+    {
+        SetTvStatic(false);
+        controllerPosAnimator.Play("ControllerSlideIn");
+    }
 
 }
