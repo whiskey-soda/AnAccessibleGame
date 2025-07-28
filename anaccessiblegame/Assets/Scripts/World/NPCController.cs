@@ -20,6 +20,13 @@ public class NPCController : Movement
     {
         isFadingIn = true;
         fadeInTimeElapsed = 0;
+
+
+        // change alpha to be fully transparent to start fading in
+        Color newColor = spriteRenderer.color;
+        newColor.a = 0;
+        spriteRenderer.color = newColor;
+
     }
 
     protected override void Update()
