@@ -8,7 +8,7 @@ public class Letterbox : MonoBehaviour
 
     void Update()
     {
-        Vector2 resTarget = new Vector2(800, 600);
+        Vector2 resTarget = new Vector2(screenTargetX, screenTargetY);
         Vector2 resViewport = new Vector2(Screen.width, Screen.height);
         Vector2 resNormalized = resTarget / resViewport; // target res in viewport space
         Vector2 size = resNormalized / Mathf.Max(resNormalized.x, resNormalized.y);
