@@ -6,6 +6,7 @@ public class Settings : MonoBehaviour
     public float gameVolume { get; private set; } = 50;
     public float musicVolume { get; private set; } = 50;
     public float sfxVolume { get; private set; } = 50;
+    public float commentaryVolume { get; private set; } = 50;
 
     [SerializeField] int windowWidth = 800;
     [SerializeField] int windowHeight = 600;
@@ -29,6 +30,8 @@ public class Settings : MonoBehaviour
         if (PlayerPrefs.HasKey("GameVolume")) { gameVolume = PlayerPrefs.GetFloat("GameVolume"); }
         if (PlayerPrefs.HasKey("MusicVolume")) { musicVolume = PlayerPrefs.GetFloat("MusicVolume"); }
         if (PlayerPrefs.HasKey("SFXVolume")) { sfxVolume = PlayerPrefs.GetFloat("SFXVolume"); }
+        if (PlayerPrefs.HasKey("CommentaryVolume")) { commentaryVolume = PlayerPrefs.GetFloat("CommentaryVolume"); }
+
 
 
         // fetch pre-existing window size settings (if they exist)
@@ -81,6 +84,12 @@ public class Settings : MonoBehaviour
     public void RaiseSFXVolBy5() { ChangeSFXVolume(CapVolume(sfxVolume + 5)); }
     public void LowerSFXVolBy5() { ChangeSFXVolume(CapVolume(sfxVolume - 5)); }
 
+    public void ChangeCommentaryVolume(float newVolume)
+    {
+        commentaryVolume = newVolume;
+        SaveVolumeValues();
+    }
+
 
     /// <summary>
     /// restricts a float to the volume minimums and maximums (0 and 100).
@@ -106,6 +115,7 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetFloat("GameVolume", gameVolume);
         PlayerPrefs.SetFloat("MusicVolume", musicVolume);
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        PlayerPrefs.SetFloat("CommentaryVolume", commentaryVolume);
 
         UpdateMixerVolumes();
     }
@@ -119,15 +129,18 @@ public class Settings : MonoBehaviour
         if (gameVolume == 0) { gameVolume = 0.0001f; }
         if (musicVolume == 0) { musicVolume = 0.0001f; }
         if (sfxVolume == 0) { sfxVolume = 0.0001f; }
+        if (commentaryVolume == 0) { commentaryVolume = 0.0001f; }
 
         audioMixer.SetFloat("GameVolume", Mathf.Log10(gameVolume/100) * 20);
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume/100) * 20);
         audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume / 100) * 20);
+        audioMixer.SetFloat("CommentaryVolume", Mathf.Log10(commentaryVolume / 100) * 20);
 
         // set volume values back to zero (if they were adjusted) for display purposes
         if (gameVolume == 0.0001f) { gameVolume = 0; }
         if (musicVolume == 0.0001f) { musicVolume = 0; }
         if (sfxVolume == 0.0001f) {  sfxVolume = 0; }
+        if (commentaryVolume == 0.0001f) { commentaryVolume = 0; }
     }
 
     public void SetFullscreen(bool fullscreen)

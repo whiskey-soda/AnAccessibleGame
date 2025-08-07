@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class VolumeSlider : MonoBehaviour
 {
-    enum VolumeSetting { game, music, sfx }
+    enum VolumeSetting { game, music, sfx, commentary }
 
     [SerializeField] Slider slider;
     [SerializeField] float sliderSteps = 20;
@@ -43,6 +43,10 @@ public class VolumeSlider : MonoBehaviour
             case VolumeSetting.sfx:
                 slider.value = Settings.Instance.sfxVolume / (settings.volumeMax / sliderSteps);
                 break;
+
+            case VolumeSetting.commentary:
+                slider.value = Settings.Instance.commentaryVolume / (settings.volumeMax / sliderSteps);
+                break;
         }
     }
 
@@ -68,6 +72,10 @@ public class VolumeSlider : MonoBehaviour
 
             case VolumeSetting.sfx:
                 settings.ChangeSFXVolume(slider.value * (settings.volumeMax / sliderSteps));
+                break;
+
+            case VolumeSetting.commentary:
+                settings.ChangeCommentaryVolume(slider.value * (settings.volumeMax / sliderSteps));
                 break;
         }
     }

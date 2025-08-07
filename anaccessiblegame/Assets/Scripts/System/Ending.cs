@@ -1,4 +1,3 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -148,6 +147,12 @@ public class Ending : MonoBehaviour
 
             case 5: // return to menu and reset ending
                 sceneController.GoToMainMenu();
+
+                // enable commentary
+                if (CommentaryController.Instance != null)
+                {
+                    CommentaryController.Instance.UnlockCommentary();
+                }
 
                 // destroy this ending cutscene (will be recreated when platformer is initialized)
                 Destroy(gameObject);

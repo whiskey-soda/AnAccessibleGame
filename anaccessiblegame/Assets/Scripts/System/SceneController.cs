@@ -106,4 +106,9 @@ public class SceneController : MonoBehaviour
         controllerPosAnimator.Play("ControllerSlideIn");
     }
 
+    public void QuitToDesktop()
+    {
+        Application.Quit();
+    }
+
 }
