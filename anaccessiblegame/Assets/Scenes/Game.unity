@@ -5577,7 +5577,7 @@ MonoBehaviour:
     ScreenPosition: {x: -0.35, y: 0}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.1680001, y: 0.6}
+      Size: {x: 0.09, y: 0.6}
     HardLimits:
       Enabled: 0
       Size: {x: 0.8, y: 1.16}
