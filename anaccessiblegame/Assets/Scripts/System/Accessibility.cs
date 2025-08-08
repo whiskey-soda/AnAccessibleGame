@@ -42,6 +42,11 @@ public class Accessibility : MonoBehaviour
         gameSpeedPercent -= 10;
     }
 
+    public void SetGameSpeed(int newGameSpeedPercent)
+    {
+        gameSpeedPercent = newGameSpeedPercent;
+    }
+
     public void SetRunToggle(bool isOn)
     {
         // do not turn off if timestop is on

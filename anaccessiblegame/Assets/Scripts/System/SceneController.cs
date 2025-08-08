@@ -37,6 +37,7 @@ public class SceneController : MonoBehaviour
     public void TransitionToGameplay()
     {
         camAnimator.Play("PanToGameplay");
+        Time.timeScale = 1;
         Invoke(nameof(StartGame), gameStartDelay + panToGameplay.length); // start game after pan is done + a delay
     }
 
@@ -49,9 +50,18 @@ public class SceneController : MonoBehaviour
         pauseMenu.ClosePauseMenu();
         pauseMenu.DisablePausing();
         playerControl.DisableControl();
+        spawnController.Spawn(); // sets player to initial spawn so that it cant die during loading
         soundController.SetSoundEffectsEnabled(false);
         soundController.SetMusicEnabled(false);
         controllerPosAnimator.Play("ControllerSlideOut");
+
+        // disable accessibility options (prevents timescale error with timestop and menu)
+        if (accessibility != null)
+        {
+            accessibility.SetTimestop(false);
+            accessibility.SetJumpToggle(false);
+            accessibility.SetRunToggle(false);
+        }
 
     }
 
@@ -65,6 +75,7 @@ public class SceneController : MonoBehaviour
 
     void InitializePlatformer()
     {
+        accessibility.SetGameSpeed(100);
         pauseMenu.EnablePausing();
         playerControl.EnableControl();
         spawnController.Spawn();
