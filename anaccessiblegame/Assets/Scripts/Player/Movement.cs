@@ -227,6 +227,9 @@ public class Movement : MonoBehaviour
         canMove = true;
     }
 
+    /// <summary>
+    /// disables movement and stops sprinting
+    /// </summary>
     public void DisableMovement()
     {
         canMove = false;
@@ -234,6 +237,16 @@ public class Movement : MonoBehaviour
         // stop all movement inputs
         isSprinting = false;
         moveDirection = 0;
+    }
+
+    public void DisableMovement(bool retainSprintingStatus)
+    {
+        bool sprintingStatus = isSprinting;
+
+        DisableMovement();
+
+        // re-apply sprinting status so it does not get canceled
+        if (retainSprintingStatus) { isSprinting = sprintingStatus; }
     }
 
     public void PlayFootstepSound()

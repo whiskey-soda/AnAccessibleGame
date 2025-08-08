@@ -51,7 +51,7 @@ public class PauseMenu : MonoBehaviour
 
         isOpen = true;
 
-        playerControl.DisableControl();
+        playerControl.DisableControl(true);
 
 
         // play menu opening sound

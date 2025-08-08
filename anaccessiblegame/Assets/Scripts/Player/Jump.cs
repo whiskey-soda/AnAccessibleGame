@@ -48,11 +48,13 @@ public class Jump : MonoBehaviour
             maxJumpHeight = jumpHeight;
         }
 
+        // jump in progress and not complete
         if (isJumping && heightJumped < maxJumpHeight && !headCollisionDetector.headBonking)
         {
             rb2d.linearVelocityY = jumpSpeed;
         }
-        else
+        // end in-progress jump
+        else if (isJumping)
         {
             StopJump(); 
         }
@@ -60,7 +62,7 @@ public class Jump : MonoBehaviour
         heightJumped += jumpSpeed * Time.deltaTime;
 
         // stop jump if player jumping is disabled
-        if (isJumping && !canJump) { StopJump(); }
+        //if (isJumping && !canJump) { StopJump(); }
     }
 
     public void DoJump(bool inputPressed)
@@ -119,9 +121,24 @@ public class Jump : MonoBehaviour
         canJump = true;
     }
 
+    /// <summary>
+    /// disables jumping and stops any current jumps
+    /// </summary>
     public void DisableJump()
     {
         canJump = false;
+
+        if (isJumping) { StopJump(); }
+    }
+
+    public void DisableJump(bool retainJumpStatus)
+    {
+        bool jumpStatus = isJumping;
+
+        DisableJump();
+
+        // re-apply jump status so it does not get canceled
+        if (retainJumpStatus) { isJumping = jumpStatus; }
     }
 
 }
