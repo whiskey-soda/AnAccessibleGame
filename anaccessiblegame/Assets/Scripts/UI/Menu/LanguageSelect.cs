@@ -39,4 +39,24 @@ public class LanguageSelect : MonoBehaviour
         localization.SetLocale(LocalizationSettings.AvailableLocales.Locales[index]);
     }
 
+    public void NextLanguage()
+    {
+        // if at end of list, loop around to beginning of list
+        if (dropdown.value >= dropdown.options.Count -1)
+        {
+            dropdown.value = 0;
+        }
+        else { dropdown.value++; }
+    }
+
+    public void PreviousLanguage()
+    {
+        // if at start of list, loop around to end of list
+        if (dropdown.value <= 0)
+        {
+            dropdown.value = dropdown.options.Count - 1;
+        }
+        else { dropdown.value--; }
+    }
+
 }
